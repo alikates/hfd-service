@@ -38,7 +38,8 @@ private:
     enum Colors {
         RED = 0,
         GREEN = 1,
-        BLUE = 2
+        BLUE = 2,
+        WHITE = 3
     };
 
     void setDelay();

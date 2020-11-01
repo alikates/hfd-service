@@ -86,6 +86,8 @@ LedsSysfs::LedsSysfs(): Leds() {
                 m_rgbDevices[Colors::GREEN] = dev;
             if (color == "blue")
                 m_rgbDevices[Colors::BLUE] = dev;
+            if (color == "white")
+                m_rgbDevices[Colors::WHITE] = dev;
         }
     }
 
