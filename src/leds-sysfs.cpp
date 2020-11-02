@@ -82,20 +82,23 @@ LedsSysfs::LedsSysfs(): Leds() {
             std::cout << "got: " << color << std::endl;
             if (color == "red")
                 m_rgbDevices[Colors::RED] = dev;
+                m_timer &= has_timer_trigger(dev);
             if (color == "green")
                 m_rgbDevices[Colors::GREEN] = dev;
+                m_timer &= has_timer_trigger(dev);
             if (color == "blue")
                 m_rgbDevices[Colors::BLUE] = dev;
+                m_timer &= has_timer_trigger(dev);
             if (color == "white")
                 m_rgbDevices[Colors::WHITE] = dev;
         }
     }
 
-    for (auto dev : m_rgbDevices) {
-        dev.second.set_sysattr("trigger", "timer");
+    if(m_timer) {
+        for (auto dev : m_rgbDevices) {
+            dev.second.set_sysattr("trigger", "timer");
+        }
     }
-
-    m_timer = true;
 
     // Get up to date
     configure();

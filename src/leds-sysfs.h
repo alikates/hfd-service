@@ -42,6 +42,8 @@ private:
         WHITE = 3
     };
 
+    bool pwm_capable;
+
     void setDelay();
     void setLed(Colors color, int value);
 
