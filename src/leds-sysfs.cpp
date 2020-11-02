@@ -115,10 +115,12 @@ void LedsSysfs::configure() {
         setLed(Colors::RED, rgba::Red(m_color));
         setLed(Colors::GREEN, rgba::Green(m_color));
         setLed(Colors::BLUE, rgba::Blue(m_color));
+        setLed(Colors::WHITE, 1);
     } else {
         m_rgbDevices[Colors::RED].set_sysattr("brightness", "0");
         m_rgbDevices[Colors::GREEN].set_sysattr("brightness", "0");
         m_rgbDevices[Colors::BLUE].set_sysattr("brightness", "0");
+        m_rgbDevices[Colors::WHITE].set_sysattr("brightness", "0");
     }
 }
 
